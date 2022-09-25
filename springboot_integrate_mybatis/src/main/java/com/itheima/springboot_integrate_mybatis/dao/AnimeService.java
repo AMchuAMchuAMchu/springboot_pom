@@ -18,5 +18,7 @@ import java.util.List;
 public interface AnimeService {
 
     @Select("select * from animeInfo")
+
     List<AnimeInfo> getAllAnime();
+
 }
