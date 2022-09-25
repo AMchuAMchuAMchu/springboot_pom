@@ -1,5 +1,9 @@
 package com.itheima.springboot_integrate_mybatis.bean;
 
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
 /**
  * Description==>TODO
  * BelongsProject==>springboot_pom
@@ -8,6 +12,19 @@ package com.itheima.springboot_integrate_mybatis.bean;
  * Version==>1.0
  * Author==>02雪乃赤瞳楪祈校条祭制作委员会 wyq_start
  */
-public class AnimeInfo {
+@Component
+public class AnimeInfo implements Serializable {
+
+    private String name;
+
+    private Integer releaseTime;
+
+    private String character01;
+
+    private String character02;
+
+
+
+
 
 }

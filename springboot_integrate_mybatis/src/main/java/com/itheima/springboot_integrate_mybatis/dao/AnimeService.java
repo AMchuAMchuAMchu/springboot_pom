@@ -1,6 +1,10 @@
 package com.itheima.springboot_integrate_mybatis.dao;
 
+import com.itheima.springboot_integrate_mybatis.bean.AnimeInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * Description==>TODO
@@ -11,6 +15,8 @@ import org.apache.ibatis.annotations.Mapper;
  * Author==>02雪乃赤瞳楪祈校条祭制作委员会 wyq_start
  */
 @Mapper
-public interface AnimeInfo {
+public interface AnimeService {
 
+    @Select("select * from animeInfo")
+    List<AnimeInfo> getAllAnime();
 }
