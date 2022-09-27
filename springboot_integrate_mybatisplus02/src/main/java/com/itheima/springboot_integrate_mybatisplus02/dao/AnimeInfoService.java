@@ -3,6 +3,7 @@ package com.itheima.springboot_integrate_mybatisplus02.dao;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -14,7 +15,6 @@ import java.util.List;
  * Version==>1.0
  * Author==>02雪乃赤瞳楪祈校条祭制作委员会 wyq_start
  */
-@Mapper
 public interface AnimeInfoService {
 
     boolean saveAnimeInfo(AnimeInfo animeInfo);

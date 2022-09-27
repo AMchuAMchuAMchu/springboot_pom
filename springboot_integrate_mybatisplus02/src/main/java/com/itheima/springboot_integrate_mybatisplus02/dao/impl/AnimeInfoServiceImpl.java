@@ -8,6 +8,7 @@ import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeService;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ import java.util.List;
  * Version==>1.0
  * Author==>02雪乃赤瞳楪祈校条祭制作委员会 wyq_start
  */
-@Mapper
+@Service
 public class AnimeInfoServiceImpl implements AnimeInfoService {
 
 

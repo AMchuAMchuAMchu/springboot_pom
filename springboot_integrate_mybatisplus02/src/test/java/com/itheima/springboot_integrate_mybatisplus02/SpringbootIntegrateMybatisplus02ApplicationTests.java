@@ -70,7 +70,7 @@ class SpringbootIntegrateMybatisplus02ApplicationTests {
     @Test
     void deleteById(){
 
-        boolean b = animeInfoService.deleteById(7);
+        boolean b = animeInfoService.deleteById(10);
         System.out.println("deleteById::"+b);
 
     }
@@ -85,7 +85,7 @@ class SpringbootIntegrateMybatisplus02ApplicationTests {
         animeInfo.setReleaseTime(2021);
         animeInfo.setCharacter01("布仑希尔德");
         animeInfo.setCharacter02("格蕾");
-        animeInfo.setId(11);
+        animeInfo.setId(12);
 
         boolean b = animeInfoService.saveAnimeInfo(animeInfo);
 
