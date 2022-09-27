@@ -2,6 +2,7 @@ package com.itheima.springboot_integrate_mybatisplus02.pojo;
 
 import lombok.Data;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,5 +26,18 @@ public class AnimeInfo {
     private String character02;
 
     private Integer id;
+
+
+    public AnimeInfo() {
+    }
+
+    public AnimeInfo(String name, Integer releaseTime, String character01, String character02, Integer id) {
+        this.name = name;
+        this.releaseTime = releaseTime;
+        this.character01 = character01;
+        this.character02 = character02;
+        this.id = id;
+    }
+
 
 }
