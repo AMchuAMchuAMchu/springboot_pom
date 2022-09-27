@@ -2,8 +2,11 @@ package com.itheima.springboot_integrate_mybatisplus02;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeInfoService;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeService;
+import com.itheima.springboot_integrate_mybatisplus02.dao.impl.AnimeInfoServiceImpl;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
 import org.apache.logging.log4j.util.Strings;
 import org.junit.jupiter.api.Test;
@@ -16,14 +19,77 @@ import java.util.List;
 class SpringbootIntegrateMybatisplus02ApplicationTests {
 
     @Autowired
-    private AnimeService animeService;
+    private AnimeInfoService animeInfoService;
+
+
+    @Test
+    void getAnimeInfoByPage(){
+
+        IPage<AnimeInfo> animeInfoByPage = animeInfoService.getAnimeInfoByPage(2, 4);
+
+        System.out.print("getAnimeInfoByPage::");
+
+        List<AnimeInfo> records = animeInfoByPage.getRecords();
+
+        records.forEach(System.out::println);
+
+
+    }
+
+    @Test
+    void getAllAnimeInfo(){
+
+        List<AnimeInfo> allAnimeInfo = animeInfoService.getAllAnimeInfo();
+
+        System.out.print("getAllAnimeInfo::");
+
+        allAnimeInfo.forEach(System.out::println);
+
+    }
+
+
+    @Test
+    void getAnimeInfoById(){
+
+        AnimeInfo animeInfoById = animeInfoService.getAnimeInfoById(1);
+        System.out.println("getAnimeInfoById::"+animeInfoById);
+
+    }
+
+    @Test
+    void updateById(){
+        AnimeInfo animeInfo = new AnimeInfo();
+        animeInfo.setCharacter01("锦木千束LycoReco");
+        boolean b = animeInfoService.updateByAnimeInfo(animeInfo);
+        System.out.println("updateById::"+b);
+
+
+    }
+
+
+    @Test
+    void deleteById(){
+
+        boolean b = animeInfoService.deleteById(7);
+        System.out.println("deleteById::"+b);
+
+    }
 
 
 
     @Test
     void saveAnimeInfo(){
 
+        AnimeInfo animeInfo = new AnimeInfo();
+        animeInfo.setName("终末的女武神");
+        animeInfo.setReleaseTime(2021);
+        animeInfo.setCharacter01("布仑希尔德");
+        animeInfo.setCharacter02("格蕾");
+        animeInfo.setId(11);
 
+        boolean b = animeInfoService.saveAnimeInfo(animeInfo);
+
+        System.out.println("saveAnimeInfo::"+b);
 
 
     }
