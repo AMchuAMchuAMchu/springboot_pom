@@ -20,6 +20,13 @@ class SpringbootIntegrateMybatisplus02ApplicationTests {
 
 
 
+    @Test
+    void saveAnimeInfo(){
+
+
+
+
+    }
 
 
 

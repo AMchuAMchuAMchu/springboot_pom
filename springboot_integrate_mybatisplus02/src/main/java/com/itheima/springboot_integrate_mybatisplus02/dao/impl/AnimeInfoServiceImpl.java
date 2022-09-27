@@ -1,6 +1,8 @@
 package com.itheima.springboot_integrate_mybatisplus02.dao.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeInfoService;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeService;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
@@ -41,16 +43,20 @@ public class AnimeInfoServiceImpl implements AnimeInfoService {
 
     @Override
     public AnimeInfo getAnimeInfoById(Integer id) {
-        return null;
+        return animeService.selectById(id);
     }
 
     @Override
     public List<AnimeInfo> getAllAnimeInfo() {
-        return null;
+        return animeService.selectList(null);
     }
 
     @Override
     public IPage<AnimeInfo> getAnimeInfoByPage(Integer currentPage, Integer pageSize) {
-        return null;
+        Page<AnimeInfo> aif = new Page<>(currentPage,pageSize);
+        Page<AnimeInfo> animeInfoPage = animeService.selectPage(aif, null);
+        return animeInfoPage;
     }
+
+
 }
