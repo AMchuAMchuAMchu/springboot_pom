@@ -20,9 +20,18 @@ class SpringbootIntegrateMybatisplus02ApplicationTests {
 
 
 
+
+    @Test
+    void testQueryWrapper(){
+
+        AnimeInfo animeInfo = animeService.selectById(1);
+        System.out.println(animeInfo);
+
+
+    }
+
     @Test
     void testWrapperQuery(){
-
         Page<AnimeInfo> animeInfoPage = new Page<>(1, 2);
         LambdaQueryWrapper<AnimeInfo> ailqw = new LambdaQueryWrapper<>();
         ailqw.like(AnimeInfo::getName,"之");
