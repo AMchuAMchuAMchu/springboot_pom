@@ -66,9 +66,15 @@ public class AnimeInfoController {
     public R testInsert(@RequestBody AnimeInfo animeInfo){
 
 //        AnimeInfo animeInfo = new AnimeInfo("魔女之旅", 2020, "伊蕾娜本渡枫", "沙耶黑泽朋世", 14);
-        boolean b = animeInfoService.saveAnimeInfo(animeInfo);
-        System.out.println("testInsert::"+b);
-        return new R(b);
+        boolean b = false;
+        try {
+            b = animeInfoService.saveAnimeInfo(animeInfo);
+            System.out.println("testInsert::"+b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return new R(b);
+        }
     }
 
 
