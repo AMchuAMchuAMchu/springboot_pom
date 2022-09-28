@@ -1,12 +1,10 @@
 package com.itheima.springboot_integrate_mybatisplus02.dao.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeInfoService;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeService;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

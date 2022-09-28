@@ -1,5 +1,6 @@
 package com.itheima.springboot_integrate_mybatisplus02.controller;
 
+import com.itheima.springboot_integrate_mybatisplus02.controller.front_end.R;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeInfoService;
 import com.itheima.springboot_integrate_mybatisplus02.dao.AnimeService02;
 import com.itheima.springboot_integrate_mybatisplus02.pojo.AnimeInfo;
@@ -28,10 +29,10 @@ public class AnimeInfoController {
 
 
     @GetMapping
-    public List<AnimeInfo> testGetAllAnimeInfo(){
+    public R testGetAllAnimeInfo(){
         List<AnimeInfo> allAnimeInfo = animeInfoService.getAllAnimeInfo();
         allAnimeInfo.forEach(System.out::println);
-        return allAnimeInfo;
+        return new R(true,allAnimeInfo);
     }
 
 //    {
@@ -43,31 +44,31 @@ public class AnimeInfoController {
 //    },
 
     @PutMapping
-    public boolean testUpdate(){
-        AnimeInfo animeInfo = new AnimeInfo("Lycoris Recoil", 2022, "锦木千束安济知佳", "井之上泷奈若山诗音", 1);
+    public R testUpdate(@RequestBody AnimeInfo animeInfo){
+//        AnimeInfo animeInfo = new AnimeInfo("Lycoris Recoil", 2022, "锦木千束安济知佳", "井之上泷奈若山诗音", 1);
         boolean modify = animeService02.modify(animeInfo);
         System.out.println("testUpdate::"+modify);
-        return modify;
+        return new R(modify);
 
     }
 
     @DeleteMapping("/{id}")
-    public boolean testDelete(@PathVariable Integer id){
+    public R testDelete(@PathVariable Integer id){
 
         boolean b = animeInfoService.deleteById(id);
         System.out.println("testDelete::"+b);
-        return b;
+        return new R(b);
 
 
     }
 
     @PostMapping
-    public boolean testInsert(@RequestBody AnimeInfo animeInfo){
+    public R testInsert(@RequestBody AnimeInfo animeInfo){
 
 //        AnimeInfo animeInfo = new AnimeInfo("魔女之旅", 2020, "伊蕾娜本渡枫", "沙耶黑泽朋世", 14);
         boolean b = animeInfoService.saveAnimeInfo(animeInfo);
         System.out.println("testInsert::"+b);
-        return b;
+        return new R(b);
     }
 
 
