@@ -34,6 +34,14 @@ public class AnimeInfoController {
         return allAnimeInfo;
     }
 
+//    {
+//        "name": "契约之吻",
+//            "releaseTime": 2022,
+//            "character01": "锦木千束LycoReco",
+//            "character02": "木更",
+//            "id": 4
+//    },
+
     @PutMapping
     public boolean testUpdate(){
         AnimeInfo animeInfo = new AnimeInfo("Lycoris Recoil", 2022, "锦木千束安济知佳", "井之上泷奈若山诗音", 1);
@@ -43,10 +51,10 @@ public class AnimeInfoController {
 
     }
 
-    @DeleteMapping
-    public boolean testDelete(){
+    @DeleteMapping("/{id}")
+    public boolean testDelete(@PathVariable Integer id){
 
-        boolean b = animeInfoService.deleteById(8);
+        boolean b = animeInfoService.deleteById(id);
         System.out.println("testDelete::"+b);
         return b;
 
@@ -54,9 +62,9 @@ public class AnimeInfoController {
     }
 
     @PostMapping
-    public boolean testInsert(){
+    public boolean testInsert(@RequestBody AnimeInfo animeInfo){
 
-        AnimeInfo animeInfo = new AnimeInfo("魔女之旅", 2020, "伊蕾娜本渡枫", "沙耶黑泽朋世", 14);
+//        AnimeInfo animeInfo = new AnimeInfo("魔女之旅", 2020, "伊蕾娜本渡枫", "沙耶黑泽朋世", 14);
         boolean b = animeInfoService.saveAnimeInfo(animeInfo);
         System.out.println("testInsert::"+b);
         return b;
