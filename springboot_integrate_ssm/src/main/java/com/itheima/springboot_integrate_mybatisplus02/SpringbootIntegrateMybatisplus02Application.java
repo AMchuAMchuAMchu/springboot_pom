@@ -8,6 +8,7 @@ public class SpringbootIntegrateMybatisplus02Application {
 
     public static void main(String[] args) {
 
+
         SpringApplication.run(SpringbootIntegrateMybatisplus02Application.class, args);
     }
 
