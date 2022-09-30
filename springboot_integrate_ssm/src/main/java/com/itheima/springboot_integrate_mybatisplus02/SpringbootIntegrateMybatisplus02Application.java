@@ -10,6 +10,7 @@ public class SpringbootIntegrateMybatisplus02Application {
 
 
 
+
         SpringApplication.run(SpringbootIntegrateMybatisplus02Application.class, args);
     }
 
